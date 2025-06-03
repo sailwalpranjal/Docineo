@@ -1,0 +1,390 @@
+/*
+  DOCINEO STYLESHEET
+  Premium and Professional UI for a Tool-based Platform
+*/
+
+/* Global Settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* LUXURY LIVE BACKGROUND WITH PATTERN */
+.animated-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  background: linear-gradient(135deg,
+    #0e0e0e,
+    #1a1f2f,
+    #2a203d,
+    #3b2f50
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease-in-out infinite;
+  filter: brightness(0.9) contrast(1.2) saturate(1.2);
+  overflow: hidden;
+}
+
+/* Subtle Animated Pattern Layer */
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: patternDrift 60s linear infinite;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Optional Subtle Glow Overlay */
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center,
+    rgba(255, 215, 0, 0.03),
+    rgba(0, 0, 0, 0.5)
+  );
+  animation: glowShift 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pattern Drift Animation */
+@keyframes patternDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+/* Glow Pulse Animation */
+@keyframes glowShift {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.3; }
+}
+
+
+
+/* Glassmorphism Header */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  padding: 1rem 2rem;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.logo span {
+  color: #00f2fe;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00f2fe;
+}
+
+.btn-gradient {
+  background: linear-gradient(to right, #00f2fe, #4facfe);
+  padding: 0.6rem 1.5rem;
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.1);
+}
+
+.btn-outline {
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #00f2fe;
+  background: transparent;
+  color: #00f2fe;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #00f2fe;
+  color: #000;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.hero-content .highlight {
+  color: #00f2fe;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-media img {
+  max-width: 500px;
+  width: 100%;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Section Titles */
+.section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+/* Tools Grid */
+.tool-category {
+  margin-bottom: 3rem;
+}
+
+.tool-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00f2fe;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.tool-card {
+  background: #1a1a2e;
+  padding: 1.5rem;
+  border-radius: 15px;
+  color: #fff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tool-card:hover {
+  transform: scale(1.05);
+  background: #00f2fe;
+  color: #000;
+}
+
+/* Features */
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feature-card {
+  flex: 1 1 300px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  background: #00f2fe;
+  color: #000;
+}
+
+.feature-card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* About Section */
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* Ad Section */
+.ads {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.ad-box {
+  flex: 1 1 300px;
+  height: 150px;
+  background: #222;
+  border: 2px dashed #00f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00f2fe;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* Contact Section */
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  align-self: flex-start;
+}
+
+/* Footer */
+.footer {
+  padding: 2rem;
+  background: #000;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00f2fe;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-media img {
+    margin-top: 2rem;
+  }
+
+  .ads {
+    flex-direction: column;
+  }
+
+  .features-grid,
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+}
